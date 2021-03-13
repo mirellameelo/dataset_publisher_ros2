@@ -67,16 +67,3 @@ ros2 run publisher euroc_images -i <path_to_dataset>/mav0
 ```
 
 Stereo images will be published in **/image/right** and **image/left** topics, and frame_id is set to **image**
-
-### RAWSEEDS dataset
-
-Download one of the [sequence](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) (ASL Dataset Format) and run:
-
-
-```bash
-ros2 run publisher euroc_images -i <path_to_dataset>/mav0
-```
-
-Stereo images will be published in **/image/right** and **image/left** topics, and frame_id is set to **image**
-
-OBS: images are no
