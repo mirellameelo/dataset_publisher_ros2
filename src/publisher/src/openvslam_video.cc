@@ -64,6 +64,8 @@ int main(int argc, char* argv[]) {
 
     while (rclcpp::ok() && video.read(frame)) {
         msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", frame).toImageMsg();
+        msg->header.stamp = node->now();
+        msg->header.frame_id = "image";
         publisher.publish(msg);
         exec.spin_some();
         pub_rate.sleep();
