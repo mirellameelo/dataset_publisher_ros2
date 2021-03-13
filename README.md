@@ -23,20 +23,9 @@ colcon build
 
 ## Usage
 
-### OpenvSLAM dataset (Video - Fisheye camera)
+### OpenvSLAM dataset 
 
-Download one of the [sequences](https://drive.google.com/drive/folders/1SVDsgz-ydm1pAbrdmhRQTmWhJnUl_xr8) and run:
-
-
-```bash
-ros2 run publisher openvslam_video -m <path_to_video>/video.mp4
-```
-
-Images will be published in **/video/image_raw** topic and frame_id is set to **image**
-
-### OpenvSLAM dataset (Video - Equirectangular camera)
-
-Download one of the [sequences](https://drive.google.com/drive/folders/1A_gq8LYuENePhNHsuscLZQPhbJJwzAq4) and run:
+Download one of the [**Fisheye camera** sequence](https://drive.google.com/drive/folders/1SVDsgz-ydm1pAbrdmhRQTmWhJnUl_xr8) or one of the [**Equirectangular camera** sequence](https://drive.google.com/drive/folders/1A_gq8LYuENePhNHsuscLZQPhbJJwzAq4) and run:
 
 
 ```bash
@@ -44,7 +33,6 @@ ros2 run publisher openvslam_video -m <path_to_video>/video.mp4
 ```
 
 Images will be published in **/video/image_raw** topic and frame_id is set to **image**
-
 
 ### KITTI dataset
 
