@@ -35,7 +35,7 @@ Images will be published in **/video/image_raw** topic and frame_id is set to **
 
 ### KITTI dataset
 
-Download one of the [odometry dataset(grayscale)](https://drive.google.com/drive/folders/1SVDsgz-ydm1pAbrdmhRQTmWhJnUl_xr8) and run:
+Download one of the [odometry dataset(grayscale)](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) and run:
 
 
 ```bash
