@@ -31,7 +31,7 @@ Download one of the [**Fisheye camera** sequence](https://drive.google.com/drive
 ros2 run publisher openvslam_video -m <path_to_video>/video.mp4
 ```
 
-Images will be published in **/video/image_raw** topic and frame_id is set to **image**
+Images will be published in **camera/image_raw** topic and frame_id is set to **camera_link**
 
 ### KITTI dataset
 
@@ -42,7 +42,7 @@ Download one of the [odometry dataset(grayscale)](http://www.cvlibs.net/datasets
 ros2 run publisher kitti_images -i <path_to_dataset>/<sequence_number>
 ```
 
-Stereo images will be published in **/image/right** and **image/left** topics, and frame_id is set to **image**
+Stereo images will be published in **camera/left/image_raw** and **camera/right/image_raw** topics, and frame_id is set to **camera_link**
 
 ### EuRoc dataset
 
@@ -53,4 +53,4 @@ Download one of the [sequence](https://projects.asl.ethz.ch/datasets/doku.php?id
 ros2 run publisher euroc_images -i <path_to_dataset>/mav0
 ```
 
-Stereo images will be published in **/image/right** and **image/left** topics, and frame_id is set to **image**
+Stereo images will be published in **camera/left/image_raw** and **camera/right/image_raw** topics, and frame_id is set to **camera_link**
