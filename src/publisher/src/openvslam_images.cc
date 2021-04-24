@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
     rmw_qos_profile_t custom_qos = rmw_qos_profile_default;
     custom_qos.depth = 1;
 
-    auto publisher = image_transport::create_publisher(node.get(), "/image", custom_qos);
+    auto publisher = image_transport::create_publisher(node.get(), "camera/image_raw", custom_qos);
 
     sensor_msgs::msg::Image::SharedPtr msg;
     rclcpp::WallRate pub_rate(img_fps->value());
@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
 
         msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", img).toImageMsg();
         msg->header.stamp = node->now();
-        msg->header.frame_id = "image";
+        msg->header.frame_id = "camera_link";
 
         publisher.publish(msg);
         exec.spin_some();

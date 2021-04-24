@@ -44,8 +44,8 @@ int main(int argc, char* argv[]) {
     rmw_qos_profile_t custom_qos = rmw_qos_profile_default;
     custom_qos.depth = 1;
 
-    auto publisher_left = image_transport::create_publisher(node.get(), "/image/left", custom_qos);
-    auto publisher_right = image_transport::create_publisher(node.get(), "/image/right", custom_qos);
+    auto publisher_left = image_transport::create_publisher(node.get(), "camera/left/image_raw", custom_qos);
+    auto publisher_right = image_transport::create_publisher(node.get(), "camera/right/image_raw", custom_qos);
 
     sensor_msgs::msg::Image::SharedPtr msg_left, msg_right;
     rclcpp::WallRate pub_rate(img_fps->value());
@@ -64,11 +64,11 @@ int main(int argc, char* argv[]) {
 
         msg_left = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", img_left).toImageMsg();
         msg_left->header.stamp = node->now();
-        msg_left->header.frame_id = "image";
+        msg_left->header.frame_id = "camera_link";
 
         msg_right = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", img_right).toImageMsg();
         msg_right->header.stamp = msg_left->header.stamp;
-        msg_right->header.frame_id = "image";
+        msg_right->header.frame_id = "camera_link";
 
         publisher_left.publish(msg_left);
         publisher_right.publish(msg_right);

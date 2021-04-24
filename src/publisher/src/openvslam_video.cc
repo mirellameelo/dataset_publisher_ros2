@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
     rmw_qos_profile_t custom_qos = rmw_qos_profile_default;
     custom_qos.depth = 1;
 
-    const image_transport::Publisher publisher = image_transport::create_publisher(node.get(), "/video/image_raw", custom_qos);
+    const image_transport::Publisher publisher = image_transport::create_publisher(node.get(), "camera/image_raw", custom_qos);
 
     cv::Mat frame;
     cv::VideoCapture video;
@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
     while (rclcpp::ok() && video.read(frame)) {
         msg = cv_bridge::CvImage(std_msgs::msg::Header(), "bgr8", frame).toImageMsg();
         msg->header.stamp = node->now();
-        msg->header.frame_id = "image";
+        msg->header.frame_id = "camera_link";
         publisher.publish(msg);
         exec.spin_some();
         pub_rate.sleep();
