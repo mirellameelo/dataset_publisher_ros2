@@ -16,8 +16,14 @@ Clone the repository and build it
 ```bash
 git clone https://github.com/mirellameelo/dataset_publisher_ros2.git
 
-cd <path_to_dataset_publisher_ros2>/src
+cd <path_to_dataset_publisher_ros2>
 colcon build
+```
+
+Source the environment
+
+```bash
+source <path_to_dataset_publisher_ros2>/install/setub.bash
 ```
 
 ## Usage
