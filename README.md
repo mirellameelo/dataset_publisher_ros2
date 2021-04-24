@@ -6,9 +6,9 @@ This is a ROS2 package created to publish **images** of some of the famous datas
 
 ## Installation
 
-Source ROS2 environment (tested with eloquent)
+Source ROS2 environment (tested with Eloquent and Dashing)
 ```bash
-source /opt/ros/eloquent/setup.bash
+source /opt/ros/<distro>/setup.bash
 ```
 
 Clone the repository and build it
@@ -25,6 +25,8 @@ colcon build
 ### OpenvSLAM dataset 
 
 Download one of the [**Fisheye camera** sequence](https://drive.google.com/drive/folders/1SVDsgz-ydm1pAbrdmhRQTmWhJnUl_xr8) or one of the [**Equirectangular camera** sequence](https://drive.google.com/drive/folders/1A_gq8LYuENePhNHsuscLZQPhbJJwzAq4) and run:
+
+**OBS**: it should work with any .mp4 video. 
 
 
 ```bash
